@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute; 	
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			transition: 0.5s;
+		}
+	</style>
+</head>
+<body>	
+	
+	<div class="box" style="">
+		
+		
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 250px; left: 600px; ">		
+		<img class="shooter" src="peashooter.png"  style="top: 400px; left: 600px;">	
+		<img class="shooter" src="peashooter.png"  style="top: 530px; left: 600px;">	
+		<img class="shooter" src="peashooter.png"  style="top: 650px; left: 600px;">
+		<img class="shooter" src="peashooter.png"  style="top: 800px; left: 600px;">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 250px; left: 1500px;">
+		<img class="zombies" src="zombie2.png" style="top: 400px; left: 1500px;">
+		<img class="zombies" src="zombie2.png" style="top: 530px; left: 1500px;">
+		<img class="zombies" src="zombie4.png" style="top: 650px; left: 1500px;">
+		<img class="zombies" src="zombie4.png" style="top: 800px; left: 1500px;">
+
+		<h1 style="color: white;">Очки:</h1>
+		<h1 class="score" style="color: white"> 0</h1>
+	</div>
+<script>
+	let zombies = document.querySelectorAll(".zombies")
+	let shooter = document.querySelectorAll(".shooter")
+	let score = 0;
+	let left0 = 1500;
+	let left1 = 1500;
+	let left2 = 1500;
+	let left3 = 1500;
+	let left4 = 1500;
+	let txt = document.querySelector(".score")
+
+	txt.innerHTML = score;
+	zombies[0].onclick = function() {
+		left0 = left0 - 50
+        console.log(left0)
+        zombies[0].style.left = left0 + "px"
+
+        if (left0 == 600) {
+        	score = score + 1
+        	shooter[0].style.display = "none"
+        	txt.innerHTML = score;
+        	if (score == 5) {
+        		alert("Вы победили")
+        	}
+        }
+	}
+
+	zombies[1].onclick = function() {
+		left1 = left1 - 50
+		console.log(left1)
+		zombies[1].style.left = left1 + "px"
+
+        if (left1 == 600) {
+        	score = score + 1
+        	shooter[1].style.display = "none"
+        	txt.innerHTML = score;
+        	if (score == 5) {
+        		alert("Вы победили")
+        	}
+        }
+	}
+
+	zombies[2].onclick = function() {
+		left2 = left2 - 50
+		console.log(left2)
+		zombies[2].style.left = left2 + "px"
+        
+        if (left2 == 600) {
+        	score = score + 1
+        	shooter[2].style.display = "none"
+        	txt.innerHTML = score;
+        	if (score == 5) {
+        		alert("Вы победили")
+        	}
+        }
+	}
+
+	zombies[3].onclick = function() {
+		left3 = left3 - 50
+		console.log(left3)
+		zombies[3].style.left = left3 + "px"
+
+        if (left3 == 600) {
+        	score = score + 1
+        	shooter[3].style.display = "none"
+        	txt.innerHTML = score;
+        	if (score == 5) {
+        		alert("Вы победили")
+        	}
+        }
+	}
+
+	zombies[4].onclick = function() {
+		left4 = left4 - 50
+		console.log(left4)
+		zombies[4].style.left = left4 + "px"
+
+        if (left4 == 600) {
+        	score = score + 1
+        	shooter[4].style.display = "none"
+        	txt.innerHTML = score;
+			if (score == 5) {
+        		alert("Вы победили")
+        	}
+        }
+	}
+
+
+</script>
+</body>
+</html>
